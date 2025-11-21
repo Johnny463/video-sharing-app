@@ -1,5 +1,6 @@
+// Remove trailing slash to avoid `//api/...`
 export const API_URL =
-  "https://video-sharing-backend-d4bwckg2excdbggc.canadacentral-01.azurewebsites.net/";
+  "https://video-sharing-backend-d4bwckg2excdbggc.canadacentral-01.azurewebsites.net";
 
 export async function fetchVideos() {
   const res = await fetch(`${API_URL}/api/videos`);
