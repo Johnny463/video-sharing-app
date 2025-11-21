@@ -8,6 +8,8 @@ const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 router.get("/videos", getVideos);
-router.post("/upload", upload.single("video"), uploadVideo);
+
+// IMPORTANT FIX: match frontend ("/uploads")
+router.post("/uploads", upload.single("video"), uploadVideo);
 
 export default router;
