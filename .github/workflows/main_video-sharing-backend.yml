@@ -5,42 +5,36 @@ name: Deploy Backend to Azure
 
 on:
   push:
+    paths:
+      - "backend/**"
     branches:
       - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: 18
 
       - name: Install dependencies
-        working-directory: backend
         run: npm install
 
-      - name: Build (if needed)
-        working-directory: backend
-        run: |
-          echo "No build step for Node backend"
-
-      - name: Zip backend
-        run: |
-          cd backend
-          zip -r ../backend.zip .
+      - name: Zip backend for deployment
+        run: zip -r ../backend.zip .
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: video-sharing-backend
-          package: backend.zip
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-
-
-          
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ../backend.zip
