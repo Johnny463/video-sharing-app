@@ -29,22 +29,29 @@ const Upload = () => {
             </h2>
 
             <div className="grid sm:grid-cols-3 gap-4 text-sm">
+              
               <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
                 <p className="font-medium text-primary mb-1">Keep it short</p>
-                <p className="text-muted-foreground">15–60 seconds works best</p>
-            </div>
+                <p className="text-muted-foreground">
+                  15–60 seconds works best
+                </p>
+              </div>
 
-            <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
-              <p className="font-medium text-primary mb-1">Good lighting</p>
-              <p className="text-muted-foreground">Natural light is your friend</p>
-            </div>
+              <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+                <p className="font-medium text-primary mb-1">Good lighting</p>
+                <p className="text-muted-foreground">
+                  Natural light is your friend
+                </p>
+              </div>
 
-            <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
-              <p className="font-medium text-primary mb-1">Catchy title</p>
-              <p className="text-muted-foreground">Make people want to watch</p>
-            </div>
-            </div>
+              <div className="p-4 rounded-lg bg-card border border-border shadow-sm">
+                <p className="font-medium text-primary mb-1">Catchy title</p>
+                <p className="text-muted-foreground">
+                  Make people want to watch
+                </p>
+              </div>
 
+            </div>
           </div>
 
         </div>
